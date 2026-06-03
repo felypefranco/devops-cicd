@@ -34,9 +34,13 @@ jobs:
     
   homologacao:
     needs:
-      -dev
-      -qa
+      - dev
+      - qa
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Homolog
+        run: echo "Executando deploy no ambiente de homologação"
 
   producao:
     needs: homologacao
