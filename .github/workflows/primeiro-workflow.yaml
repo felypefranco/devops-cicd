@@ -32,14 +32,14 @@ jobs:
       - name: Fase de Teste e Qualiade
         run: echo "Executar os testes e Qualiade"
     
-  homolog:
+  homologacao:
     needs:
-        -dev
-        -qa
+      -dev
+      -qa
     runs-on: ubuntu-latest
-    
+
   producao:
-    needs: homolog
+    needs: homologacao
     runs-on: ubuntu-latest
 
     steps:
